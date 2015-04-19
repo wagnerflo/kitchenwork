@@ -1,0 +1,72 @@
+% set A5 paper size
+\setuppapersize[A5]
+
+% select Iwona font
+\usetypescript[iwona]
+\setupbodyfont[iwona,13pt]
+
+% setup paragraph indenting and vertical whitespace
+\setupindenting[yes,small]
+\setupwhitespace[small]
+
+% set page number to be in the middle of the footer and use doublesided
+% printing but singlesided layout
+\setuppagenumbering[
+    location={footer,middle},
+    alternative={singlesided,doublesided}]
+
+% set up headings
+\setuphead[chapter][
+    style={\tfd\bf},
+    page={yes,header,footer,right},
+    header=high,number=no]
+\setuphead[section][
+    style={\tfc\bf},
+    page=yes,header=high,number=no,continue=no]
+
+% configure default itemize styles
+\setupitemize[1][][n]
+\setupitemize[2][before=,after=,inbetween=][4]
+
+% body
+\starttext
+\startmakeup[standard][align=middle,pagestate=start]
+{
+  \tfd
+  \setff{smallcaps}
+  \bf
+  \setupinterlinespace[medium]
+  Cocktails\crlf
+  in a\crlf
+  Bind(er)
+  \par
+}
+\stopmakeup
+
+\startchapter[title=Glassware]
+All the following \in{recipes}[recipes] have been measured and tested with
+glassware of a certain capacity. These are
+\startitemize[4]
+\item wine glasses of 480 ml,
+\item Hurricane glasses of 460 ml,
+\item double old fashioned glasses of 350 ml,
+\item highball glasses of 270 ml,
+\item lowball glasses of 230 ml,
+\item Champagne flutes of 220 ml and
+\item cocktail or martini glasses of 210 ml.
+\stopitemize
+\stopchapter
+
+\startchapter[title={Essential Ingredients}]
+\startsection[title={Ginger syrup},reference=gingersyrup]
+6 cups water, 2 cups ginger
+\stopsection
+\stopchapter
+
+\startchapter[title=Recipes,reference=recipes]
+\placelist[section]
+\page[yes,header,footer,right]
+\input .cocktails
+\stopchapter
+
+\stoptext

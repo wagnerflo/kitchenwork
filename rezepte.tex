@@ -1,0 +1,63 @@
+% set A5 paper size
+\setuppapersize[A4]
+
+% select Iwona font
+\usetypescript[iwona]
+\setupbodyfont[iwona,13pt]
+
+% setup paragraph indenting and vertical whitespace
+\setupindenting[yes,small]
+\setupwhitespace[small]
+
+% set page number to be in the middle of the footer and use doublesided
+% printing but singlesided layout
+\setuppagenumbering[
+    location={footer,middle},
+    alternative={singlesided,doublesided}]
+
+% set up headings
+\setuphead[chapter][
+    style={\tfd\bf},
+    page={yes,header,footer,right},
+    header=high,number=no]
+\setuphead[section][
+    style={\tfc\bf},
+    page=yes,header=high,number=no,continue=no]
+
+% configure default itemize styles
+\setupitemize[1][][n]
+\setupitemize[2][before=,after=,inbetween=][4]
+
+% body
+\starttext
+\startmakeup[standard][align=middle,pagestate=start]
+{
+  \tfd
+  \setff{smallcaps}
+  \bf
+  \setupinterlinespace[medium]
+  Kochen,\crlf
+  Backen\crlf
+  und\crlf
+  Verwandtes
+  \par
+}
+\stopmakeup
+
+
+\startchapter[title={Zutaten},reference=zutaten]
+\stopchapter
+
+\startchapter[title=Eingemachtes,reference=eingemachtes]
+\placelist[section]
+\page[yes,header,footer,right]
+\input .eingemachtes
+\stopchapter
+
+\startchapter[title=Gebackenes,reference=gebackenes]
+\placelist[section]
+\page[yes,header,footer,right]
+\input .gebackenes
+\stopchapter
+
+\stoptext
