@@ -13,7 +13,7 @@ endef
 
 define _part_tmpl =
 .$(1).tex: $$(wildcard $(1)/*.tex)
-	cat $$(sort $$?) > .$(1).tex
+	cat $$(sort $$^) > .$(1).tex
 endef
 
 $(foreach pdf,$(PDF),$(eval $(call _pdf_tmpl,$(pdf))))
