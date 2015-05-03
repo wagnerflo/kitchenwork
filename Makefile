@@ -1,6 +1,6 @@
 PDF := cocktails rezepte
 
-PARTS_rezepte := eingemachtes gebackenes
+PARTS_rezepte := eingemachtes gebackenes gekochtes
 PARTS_cocktails := cocktails
 
 all: $(patsubst %,%.pdf,$(PDF))
