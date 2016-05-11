@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kitchenwork: Backen, Kochen, Mixen!</title>
+
+    <link
+       rel="stylesheet"
+       href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+       integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+       crossorigin="anonymous">
+    <link
+       rel="stylesheet"
+       href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+       integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+       crossorigin="anonymous">
+    <link
+       rel="stylesheet"
+       href="layout.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar"
+                  aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-cutlery"></span>
+          </a>
+        </div>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbar"></div>
+
+      </div>
+    </nav>
+
+    <div class="container" id="content"></div>
+
+    <script
+       src="http://code.jquery.com/jquery-1.12.3.min.js"
+       integrity="sha384-ugqypGWrzPLdx2zEQTF17cVktjb01piRKaDNnbYGRSxyEoeAm+MKZVtbDUYjxfZ6"
+       crossorigin="anonymous"></script>
+    <script
+       src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+       integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+       crossorigin="anonymous"></script>
+    <script
+       src="http://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"
+       integrity="sha384-iiBFRfCTHSXi/mHNU8P2fMrhLgng6gJgQOaeIgzgg6ZNUQUDSR9P6zCey743eHIE"
+       crossorigin="anonymous"></script>
+
+    <script id="tmpl-navbar-links" type="text/x-handlebars-template">
+      <ul class="nav navbar-nav">
+        {{#each navlinks}}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+             role="button" aria-haspopup="true" aria-expanded="false">
+            {{title}} <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            {{#each entries}}
+            <li><a href="#{{../folder}}/{{file}}">{{title}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script id="tmpl-content" type="text/x-handlebars-template">
+      <div class="row">
+        <h2>{{section}} » {{title}}</h2>
+        {{{content}}}
+      </div>
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+      var navlinks = [
+        {
+          title: "Cocktails", folder: "cocktails", entries: [
+            { title: "Aperol on the Orange", file: "aperol-on-the-orange" },
+            { title: "Brandy Alexander",     file: "brandy-alexander" },
+            { title: "Cujamara",             file: "cujamara" },
+            { title: "Gingergrass Mule",     file: "gingergrass-mule" },
+            { title: "Grasshopper",          file: "grasshopper" },
+            { title: "Gunner",               file: "gunner" },
+            { title: "Hurricane",            file: "hurricane" },
+            { title: "Lemon Gingerini",      file: "lemon-gingerini" },
+            { title: "Millionaire’s Mule",   file: "millionaires-mule" },
+            { title: "NiuNaut",              file: "niunaut" },
+            { title: "Pretty in Pink",       file: "pretty-in-pink" },
+            { title: "Sloe Gin Fizz",        file: "sloe-gin-fizz" },
+            { title: "Sunflower",            file: "sunflower" },
+            { title: "Sunkiss",              file: "sunkiss" },
+            { title: "Winter Warmer",        file: "winter-warmer" },
+          ]
+        }, {
+          title: "Eingemachtes", folder: "eingemachtes", entries: [
+            { title: "Apfel/Kiwi/Bananen-Marmelade",  file: "akiba-marmelade" },
+            { title: "Apfel/Maracuja/Zimt-Marmelade", file: "amazi-marmelade" },
+            { title: "Orangenmarmelade",              file: "orangen-marmelade" },
+          ]
+        }, {
+          title: "Gebäck", folder: "gebaeck", entries: [
+            { title: "Knäckebrot", file: "knaeckebrot" },
+          ]
+        }, {
+          title: "Gerichte", folder: "gerichte", entries: [
+            { title: "Bœuf Stroganoff",                  file: "boeuf-stroganoff" },
+            { title: "Limetten/Ingwer Hühnchen",         file: "limetten-ingwer-huehnchen" },
+            { title: "Oyakodon",                         file: "oyakodon" },
+            { title: "Scharf/fruchtiges Karottengemüse",
+              file: "scharf-fruchtiges-karottengemuese" },
+            { title: "Wirsing-Paprika Nudeln",           file: "wirsing-paprika-nudeln" },
+          ]
+        }, {
+          title: "Suppen", folder: "suppen", entries: [
+            { title: "Paprikacremesuppe", file: "paprikacreme" },
+          ]
+        },
+      ];
+
+      var tmpl_navbar_links = Handlebars.compile($("#tmpl-navbar-links").html());
+      var tmpl_content = Handlebars.compile($("#tmpl-content").html());
+
+      $("#navbar").append(tmpl_navbar_links({ navlinks: navlinks }));
+
+      $(document).ready(function() {
+        $(window).on("hashchange", function(evt) {
+          var path = location.hash.substr(1);
+          if(!path)
+            return;
+
+          $.ajax({
+            url: path + ".html",
+            dataType: "html",
+            success: function(data) {
+              var items = path.split("/");
+
+              $.each(navlinks, function(idx, section) {
+                if(items[0] != section.folder)
+                  return;
+                $.each(section.entries, function(idx, entry) {
+                  if(items[1] != entry.file)
+                    return;
+                  $("#content").html(
+                    tmpl_content({
+                      section: section.title,
+                      title: entry.title,
+                      content: data,
+                    })
+                  );
+                });
+              });
+            }
+          });
+        });
+
+        $(window).trigger("hashchange");
+      });
+    </script>
+
+  </body>
+</html>

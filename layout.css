@@ -1,0 +1,40 @@
+@media (min-width: 1200px) {
+    .container {
+        width: 970px;
+    }
+}
+
+body {
+    padding-top: 70px;
+}
+
+
+#content {
+    text-align: justify;
+    hyphens: auto;
+}
+
+.zutaten {
+    list-style: none;
+}
+
+.zutaten,
+.anleitung {
+    padding-left: 0;
+}
+
+.zutaten li:before {
+    content: "\25B8 \0020";
+}
+
+.anleitung li {
+    padding-top: 8px;
+}
+
+.bg-info {
+    padding: 10px;
+}
+
+.bg-info p:last-child {
+    margin-bottom: 0;
+}
