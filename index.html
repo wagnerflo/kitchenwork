@@ -140,12 +140,17 @@
         },
       ];
 
+      var navbar = $("#navbar");
       var tmpl_navbar_links = Handlebars.compile($("#tmpl-navbar-links").html());
       var tmpl_content = Handlebars.compile($("#tmpl-content").html());
 
-      $("#navbar").append(tmpl_navbar_links({ navlinks: navlinks }));
+      navbar.append(tmpl_navbar_links({ navlinks: navlinks }));
 
       $(document).ready(function() {
+        navbar.on("click", ".dropdown-menu a", function(evt) {
+          navbar.collapse("hide");
+        });
+
         $(window).on("hashchange", function(evt) {
           var path = location.hash.substr(1);
           if(!path)
