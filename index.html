@@ -72,7 +72,11 @@
           </a>
           <ul class="dropdown-menu">
             {{#each entries}}
+            {{#if separator}}
+            <li role="separator" class="divider"></li>
+            {{else}}
             <li><a href="#{{../folder}}/{{file}}">{{title}}</a></li>
+            {{/if}}
             {{/each}}
           </ul>
         </li>
@@ -111,10 +115,13 @@
           title: "Eingemachtes", folder: "eingemachtes", entries: [
             { title: "Apfel/Kiwi/Bananen-Marmelade",  file: "akiba-marmelade" },
             { title: "Apfel/Maracuja/Zimt-Marmelade", file: "amazi-marmelade" },
+            { title: "Ingwersirup",                   file: "ingwersirup" },
             { title: "Orangenmarmelade",              file: "orangen-marmelade" },
           ]
         }, {
           title: "Gebäck", folder: "gebaeck", entries: [
+            { title: "Theorie & Tipps", file: "theorie" },
+            { separator: true },
             { title: "Fladenbrot", file: "fladenbrot" },
             { title: "Knäckebrot", file: "knaeckebrot" },
           ]
