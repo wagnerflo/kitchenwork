@@ -71,11 +71,25 @@
             {{title}} <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            {{#each entries}}
-            {{#if separator}}
-            <li role="separator" class="divider"></li>
-            {{else}}
-            <li><a href="#{{../folder}}/{{file}}">{{title}}</a></li>
+            {{#each sections}}
+            {{#if title}}
+            <li class="dropdown-submenu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                 role="button" aria-haspopup="true" aria-expanded="false">
+                {{title}} <span class="rotate270 caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+            {{/if}}
+                {{#each entries}}
+                {{#if separator}}
+                <li role="separator" class="divider"></li>
+                {{else}}
+                <li><a href="#{{../../folder}}/{{file}}">{{title}}</a></li>
+                {{/if}}
+                {{/each}}
+            {{#if title}}
+              </ul>
+            </li>
             {{/if}}
             {{/each}}
           </ul>
@@ -94,25 +108,58 @@
     <script type="text/javascript" charset="utf-8">
       var navlinks = [
         {
-          title: "Cocktails", folder: "cocktails", entries: [
-            { title: "Brandy Alexander",     file: "brandy-alexander" },
-            { title: "Cujamara",             file: "cujamara" },
-            { title: "Garden Party",         file: "garden-party" },
-            { title: "Gingergrass Mule",     file: "gingergrass-mule" },
-            { title: "Grasshopper",          file: "grasshopper" },
-            { title: "Gunner",               file: "gunner" },
-            { title: "Hurricane",            file: "hurricane" },
-            { title: "Lemon Gingerini",      file: "lemon-gingerini" },
-            { title: "Millionaire’s Mule",   file: "millionaires-mule" },
-            { title: "NiuNaut",              file: "niunaut" },
-            { title: "Pretty in Pink",       file: "pretty-in-pink" },
-            { title: "Sloe Gin Fizz",        file: "sloe-gin-fizz" },
-            { title: "Sunflower",            file: "sunflower" },
-            { title: "Sunkiss",              file: "sunkiss" },
-            { title: "Winter Warmer",        file: "winter-warmer" },
+          title: "Cocktails", folder: "cocktails", sections: [
+            {
+              title: "Aperol", entries: [
+                { title: "Garden Party",         file: "garden-party" },
+                { title: "Pretty in Pink",       file: "pretty-in-pink" },
+                { title: "Sunflower",            file: "sunflower" }
+              ]
+            }, {
+              title: "Brandy", entries: [
+                { title: "Brandy Alexander",     file: "brandy-alexander" }
+              ]
+            }, {
+              title: "Cachaça", entries: [
+                { title: "Gingergrass Mule",     file: "gingergrass-mule" },
+              ]
+            }, {
+              title: "Cointreau", entries: [
+                { title: "Sunkiss",              file: "sunkiss" }
+              ]
+            }, {
+              title: "Gin", entries: [
+                { title: "Garden Party",         file: "garden-party" },
+                { title: "Lemon Gingerini",      file: "lemon-gingerini" },
+                { title: "Pretty in Pink",       file: "pretty-in-pink" },
+                { title: "Millionaire’s Mule",   file: "millionaires-mule" },
+                { title: "NiuNaut",              file: "niunaut" },
+                { title: "Sloe Gin Fizz",        file: "sloe-gin-fizz" },
+                { title: "Winter Warmer",        file: "winter-warmer" }
+              ]
+            }, {
+              title: "Rum", entries: [
+                { title: "Hurricane",            file: "hurricane" },
+                { title: "NiuNaut",              file: "niunaut" },
+                { title: "Sunflower",            file: "sunflower" }
+              ]
+            }, {
+              title: "Sparkling wine", entries: [
+                { title: "Millionaire’s Mule",   file: "millionaires-mule" }
+              ]
+            }, {
+              title: "Other", entries: [
+                { title: "Grasshopper",          file: "grasshopper" }
+              ]
+            }, {
+              title: "Non-alcoholic", entries: [
+                { title: "Cujamara",             file: "cujamara" },
+                { title: "Gunner",               file: "gunner" }
+              ]
+            }
           ]
         }, {
-          title: "Eingemachtes", folder: "eingemachtes", entries: [
+          title: "Eingemachtes", folder: "eingemachtes", sections: [{ entries: [
             { title: "Feine Salsa",                   file: "feine-salsa" },
             { title: "Hummus",                        file: "hummus" },
             { separator: true },
@@ -124,9 +171,9 @@
             { separator: true },
             { title: "Ingwersirup",                   file: "ingwersirup" },
             { title: "Kürbissirup",                   file: "kuerbissirup" },
-          ]
+          ] }]
         }, {
-          title: "Gebäck", folder: "gebaeck", entries: [
+          title: "Gebäck", folder: "gebaeck", sections: [{ entries: [
             { title: "Theorie & Tipps", file: "theorie" },
             { separator: true },
             { title: "Ciabatta",                   file: "ciabatta" },
@@ -148,9 +195,9 @@
             { title: "Pancakes",                   file: "pancakes" },
             { title: "Pizza",                      file: "pizza" },
             { title: "Pfannkuchen",                file: "pfannkuchen" },
-          ]
+          ] }]
         }, {
-          title: "Gerichte", folder: "gerichte", entries: [
+          title: "Gerichte", folder: "gerichte", sections: [{ entries: [
             { title: "Bœuf Stroganoff",
               file: "boeuf-stroganoff" },
             { title: "Bolognese",
@@ -169,15 +216,15 @@
               file: "scharf-fruchtiges-karottengemuese" },
             { title: "Wirsing-Paprika Nudeln",
               file: "wirsing-paprika-nudeln" },
-          ]
+          ] }]
         }, {
-          title: "Suppen", folder: "suppen", entries: [
+          title: "Suppen", folder: "suppen", sections: [{ entries: [
             { title: "Broccolirahmsuppe",  file: "broccolirahm" },
             { title: "Gazpacho",           file: "gazpacho" },
             { title: "Lauchcremesuppe",    file: "lauchcreme" },
             { title: "Paprikacremesuppe",  file: "paprikacreme" },
             { title: "Scharfe Entensuppe", file: "scharfe-enten" },
-          ]
+          ] }]
         },
       ];
 
@@ -203,19 +250,21 @@
             success: function(data) {
               var items = path.split("/");
 
-              $.each(navlinks, function(idx, section) {
-                if(items[0] != section.folder)
+              $.each(navlinks, function(idx, heading) {
+                if(items[0] != heading.folder)
                   return;
-                $.each(section.entries, function(idx, entry) {
-                  if(items[1] != entry.file)
-                    return;
-                  $("#content").html(
-                    tmpl_content({
-                      section: section.title,
-                      title: entry.title,
-                      content: data,
-                    })
-                  );
+                $.each(heading.sections, function(idx, section) {
+                  $.each(section.entries, function(idx, entry) {
+                    if(items[1] != entry.file)
+                      return;
+                    $("#content").html(
+                      tmpl_content({
+                        heading: heading.title,
+                        title: entry.title,
+                        content: data,
+                      })
+                    );
+                  });
                 });
               });
             }
