@@ -60,12 +60,4 @@ body {
     top: 0;
     left: 100%;
     margin-top: -6px;
-    margin-left: -1px;
-    -webkit-border-radius: 0 4px 4px 4px;
-    -moz-border-radius: 0 4px 4px;
-    border-radius: 0 4px 4px 4px;
-}
-
-.dropdown-submenu:hover > .dropdown-menu {
-    display: block;
 }
