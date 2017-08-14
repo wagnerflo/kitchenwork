@@ -241,10 +241,11 @@
       $(document).ready(function() {
         navbar.on("click", ".dropdown-menu a", function(evt) {
           navbar.collapse("hide");
+          navbar.find(".dropdown-submenu > ul.dropdown-menu").hide();
         });
 
         navbar.on("click", ".dropdown-submenu > a", function(evt) {
-          $(this).parent().siblings(".dropdown-submenu").children("ul.dropdown-menu").hide();
+          $(this).parent().siblings(".dropdown-submenu > ul.dropdown-menu").hide();
           $(this).siblings("ul.dropdown-menu").toggle();
           evt.stopPropagation();
           evt.preventDefault();
