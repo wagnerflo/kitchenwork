@@ -88,6 +88,7 @@ var navlinks = [
       { title: "Fladenbrot",                 file: "fladenbrot" },
       { title: "Knäckebrot",                 file: "knaeckebrot" },
       { title: "Präsidentenbaguettes",       file: "praesidentenbaguettes" },
+      { title: "Quark/Dinkel-Kastenbrot",    file: "quarkdinkelkasten" },
       { title: "Weizen-Haferflocken-Brot",   file: "weizenhaferflockenbrot" },
       { separator: true },
       { title: "Cantucci morbidi toscani",   file: "cantucci" },
