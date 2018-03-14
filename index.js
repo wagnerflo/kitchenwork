@@ -74,6 +74,7 @@ var navlinks = [
       { title: "Apfel/Maracuja/Zimt-Marmelade", file: "amazi-marmelade" },
       { title: "Geröstete Rhabarber/Erdbeer-Marmelade",
         file: "geroestete-rhabarber-erdbeer" },
+      { title: "Matcha-Sahnecreme",             file: "matcha-sahne-creme" },
       { title: "Orangenmarmelade",              file: "orangen-marmelade" },
       { separator: true },
       { title: "Ingwersirup",                   file: "ingwersirup" },
