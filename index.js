@@ -14,7 +14,8 @@ var navlinks = [
       }, {
         title: "Cachaça", entries: [
           { title: "Batida de Avocado",    file: "batida-de-avocado" },
-          { title: "Gingergrass Mule",     file: "gingergrass-mule" }
+          { title: "Gingergrass Mule",     file: "gingergrass-mule" },
+          { title: "Thy-me-up",            file: "thymeup" }
         ]
       }, {
         title: "Campari", entries: [
@@ -34,6 +35,10 @@ var navlinks = [
           { title: "NiuNaut",              file: "niunaut" },
           { title: "Sloe Gin Fizz",        file: "sloe-gin-fizz" },
           { title: "Winter Warmer",        file: "winter-warmer" }
+        ]
+      }, {
+        title: "Grand Marnier", entries: [
+          { title: "Thy-me-up",            file: "thymeup" }
         ]
       }, {
         title: "Rum", entries: [
