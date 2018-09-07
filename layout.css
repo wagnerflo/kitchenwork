@@ -1,18 +1,12 @@
-.container {
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .container {
-        width: 970px;
+        max-width: 840px;
     }
 }
 
 body {
-    padding-top: 70px;
+    overflow-y: scroll;
 }
-
 
 #content {
     text-align: justify;
@@ -23,41 +17,48 @@ body {
     list-style: none;
 }
 
-.zutaten,
-.anleitung {
+#content > div.row > div > .zutaten,
+#content > div.row > div > .anleitung {
     padding-left: 0;
 }
 
 .zutaten li:before {
     content: "\25B8 \0020";
+    margin-right: .25rem;
+}
+
+.anleitung {
+    list-style-position: inside;
 }
 
 .anleitung li {
-    padding-top: 8px;
+    padding-top: .5rem;
 }
 
-.bg-info {
-    padding: 10px;
-}
-
-.bg-info p:last-child {
+.alert p:last-child {
     margin-bottom: 0;
 }
 
-.rotate270 {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
+/** Dropdown submenu support **/
+.navbar-light .navbar-nav .nav-link {
+    color: rgb(64, 64, 64);
+}
+.btco-menu li > a {
+    padding: 10px 15px;
+    color: #000;
+}
+
+.btco-menu .active a:focus,
+.btco-menu li a:focus ,
+.navbar > .show > a:focus{
+    background: transparent;
+    outline: 0;
+}
+
+.dropdown-menu .show > .dropdown-toggle::after {
     transform: rotate(-90deg);
 }
 
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu > .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -6px;
+.dropdown-menu .dropdown-menu {
+    margin-top: calc(0px - 1px - 0.5rem);
 }

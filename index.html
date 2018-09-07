@@ -2,88 +2,70 @@
 <html lang="de">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="layout.css">
 
     <title>Kitchenwork: Backen, Kochen, Mixen!</title>
-
-    <link
-       rel="stylesheet"
-       href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-       crossorigin="anonymous">
-    <link
-       rel="stylesheet"
-       href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-       crossorigin="anonymous">
-    <link
-       rel="stylesheet"
-       href="layout.css">
   </head>
   <body>
 
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
+        <!-- Logo -->
+        <span class="navbar-brand">
+          <i class="fas fa-utensils"></i>
+        </span>
 
-        <!-- Header -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed"
-                  data-toggle="collapse" data-target="#navbar"
-                  aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">
-            <span class="glyphicon glyphicon-cutlery"></span>
-          </a>
-        </div>
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Links -->
+        <!-- Contents -->
         <div class="collapse navbar-collapse" id="navbar"></div>
 
       </div>
     </nav>
 
-    <div class="container" id="content"></div>
-
-    <script
-       src="http://code.jquery.com/jquery-3.1.1.min.js"
-       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-       crossorigin="anonymous"></script>
-    <script
-       src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-       crossorigin="anonymous"></script>
-    <script
-       src="http://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js"
-       integrity="sha384-iiBFRfCTHSXi/mHNU8P2fMrhLgng6gJgQOaeIgzgg6ZNUQUDSR9P6zCey743eHIE"
-       crossorigin="anonymous"></script>
+    <div class="container mt-4" id="content"></div>
 
     <script id="tmpl-navbar-links" type="text/x-handlebars-template">
-      <ul class="nav navbar-nav">
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
         {{#each navlinks}}
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-             role="button" aria-haspopup="true" aria-expanded="false">
-            {{title}} <span class="caret"></span>
-          </a>
+        <li class="nav-item dropdown">
+          <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+             href="#" class="nav-link dropdown-toggle">{{title}}</a>
           <ul class="dropdown-menu">
             {{#each sections}}
             {{#if title}}
-            <li class="dropdown-submenu">
-              <a href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                {{title}} <span class="rotate270 caret"></span>
-              </a>
+            <li>
+              <a class="dropdown-item dropdown-toggle" href="#">{{title}}</a>
               <ul class="dropdown-menu">
             {{/if}}
                 {{#each entries}}
                 {{#if separator}}
-                <li role="separator" class="divider"></li>
+                <div class="dropdown-divider"></div>
                 {{else}}
-                <li><a href="#{{../../folder}}/{{file}}">{{title}}</a></li>
+                <li>
+                  <a class="dropdown-item" href="#{{../../folder}}/{{file}}">{{title}}</a>
+                </li>
                 {{/if}}
                 {{/each}}
             {{#if title}}
@@ -99,10 +81,27 @@
 
     <script id="tmpl-content" type="text/x-handlebars-template">
       <div class="row">
-        <h2 class="text-left">{{title}}</h2>
+        <h2 class="col-md-12 order-md-1">{{title}}</h2>
         {{{content}}}
       </div>
     </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"
+      integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc="
+      crossorigin="anonymous"></script>
 
     <script src="index.js" type="text/javascript"></script>
 

@@ -4,8 +4,7 @@ var navlinks = [
       {
         title: "Aperol", entries: [
           { title: "Garden Party",         file: "garden-party" },
-          { title: "Pretty in Pink",       file: "pretty-in-pink" },
-          { title: "Sunflower",            file: "sunflower" }
+          { title: "Pretty in Pink",       file: "pretty-in-pink" }
         ]
       }, {
         title: "Brandy", entries: [
@@ -22,17 +21,12 @@ var navlinks = [
           { title: "Baroness Collins",     file: "baroness-collins" }
         ]
       }, {
-        title: "Cointreau", entries: [
-          { title: "Sunkiss",              file: "sunkiss" }
-        ]
-      }, {
         title: "Gin", entries: [
           { title: "Baroness Collins",     file: "baroness-collins" },
           { title: "Garden Party",         file: "garden-party" },
           { title: "Lemon Gingerini",      file: "lemon-gingerini" },
           { title: "Pretty in Pink",       file: "pretty-in-pink" },
           { title: "Millionaire’s Mule",   file: "millionaires-mule" },
-          { title: "NiuNaut",              file: "niunaut" },
           { title: "Sloe Gin Fizz",        file: "sloe-gin-fizz" },
           { title: "Winter Warmer",        file: "winter-warmer" }
         ]
@@ -42,10 +36,7 @@ var navlinks = [
         ]
       }, {
         title: "Rum", entries: [
-          { title: "Basilito",             file: "basilito" },
-          { title: "Hurricane",            file: "hurricane" },
-          { title: "NiuNaut",              file: "niunaut" },
-          { title: "Sunflower",            file: "sunflower" }
+          { title: "Basilito",             file: "basilito" }
         ]
       }, {
         title: "Pisco", entries: [
@@ -65,7 +56,6 @@ var navlinks = [
         ]
       }, {
         title: "Non-alcoholic", entries: [
-          { title: "Cujamara",             file: "cujamara" },
           { title: "Gunner",               file: "gunner" }
         ]
       }
@@ -82,8 +72,7 @@ var navlinks = [
       { title: "Matcha-Sahnecreme",             file: "matcha-sahne-creme" },
       { title: "Orangenmarmelade",              file: "orangen-marmelade" },
       { separator: true },
-      { title: "Ingwersirup",                   file: "ingwersirup" },
-      { title: "Kürbissirup",                   file: "kuerbissirup" },
+      { title: "Ingwersirup",                   file: "ingwersirup" }
     ] }]
   }, {
     title: "Gebäck", folder: "gebaeck", sections: [{ entries: [
@@ -150,18 +139,6 @@ var tmpl_content = Handlebars.compile($("#tmpl-content").html());
 
 navbar.append(tmpl_navbar_links({ navlinks: navlinks }));
 
-navbar.on("click", ".dropdown-menu a", function(evt) {
-  navbar.collapse("hide");
-  navbar.find(".dropdown-submenu > ul.dropdown-menu").hide();
-});
-
-navbar.on("click", ".dropdown-submenu > a", function(evt) {
-  $(this).parent().siblings(".dropdown-submenu > ul.dropdown-menu").hide();
-  $(this).siblings("ul.dropdown-menu").toggle();
-  evt.stopPropagation();
-  evt.preventDefault();
-});
-
 $(window).on("hashchange", function(evt) {
   var path = location.hash.substr(1);
   if(!path)
@@ -195,3 +172,26 @@ $(window).on("hashchange", function(evt) {
 });
 
 $(window).trigger("hashchange");
+
+/** Dropdown submenu support **/
+$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  var $el = $(this);
+  var $parent = $(this).offsetParent(".dropdown-menu");
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+  $(this).parent("li").toggleClass('show');
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+    $('.dropdown-menu .show').removeClass("show");
+  });
+
+  if (!$parent.parent().hasClass('navbar-nav')) {
+    $el.next().css({ "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 });
+  }
+
+  return false;
+});
