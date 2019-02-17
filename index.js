@@ -3,6 +3,7 @@ var navlinks = [
     title: "Cocktails", folder: "cocktails", sections: [
       {
         title: "Aperol", entries: [
+          { title: "Archangel",            file: "archangel" },
           { title: "Garden Party",         file: "garden-party" },
           { title: "Pretty in Pink",       file: "pretty-in-pink" }
         ]
@@ -22,6 +23,7 @@ var navlinks = [
         ]
       }, {
         title: "Gin", entries: [
+          { title: "Archangel",            file: "archangel" },
           { title: "Baroness Collins",     file: "baroness-collins" },
           { title: "Garden Party",         file: "garden-party" },
           { title: "Lemon Gingerini",      file: "lemon-gingerini" },
