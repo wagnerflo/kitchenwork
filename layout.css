@@ -15,6 +15,7 @@ body {
 
 .zutaten {
     list-style: none;
+    text-align: left;
 }
 
 #content > div.row > div > .zutaten,
