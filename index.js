@@ -81,6 +81,7 @@ var navlinks = [
       { title: "Theorie & Tipps", file: "theorie" },
       { separator: true },
       { title: "Ciabatta",                   file: "ciabatta" },
+      { title: "Dinkelfoccacia",             file: "dinkelfoccacia" },
       { title: "Fladenbrot",                 file: "fladenbrot" },
       { title: "Knäckebrot",                 file: "knaeckebrot" },
       { title: "Präsidentenbaguettes",       file: "praesidentenbaguettes" },
