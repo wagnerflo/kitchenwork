@@ -1,7 +1,17 @@
 var navlinks = [
   {
     title: "Cocktails", folder: "cocktails", sections: [
-      {
+      { entries: [
+          { title: "Basics", file: "basics" }
+        ]
+      }, {
+        title: "Ingredients", entries: [
+          { title: "Basil Sweet & Sour",   file: "basil-sweet-sour" }
+        ]
+      }, { entries: [
+          { separator: true }
+        ]
+      }, {
         title: "Aperol", entries: [
           { title: "Archangel",            file: "archangel" },
           { title: "Garden Party",         file: "garden-party" },
