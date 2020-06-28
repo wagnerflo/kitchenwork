@@ -93,9 +93,7 @@ var navlinks = [
       { title: "Ciabatta",                   file: "ciabatta" },
       { title: "Dinkelfoccacia",             file: "dinkelfoccacia" },
       { title: "Fladenbrot",                 file: "fladenbrot" },
-      { title: "Knäckebrot",                 file: "knaeckebrot" },
       { title: "Präsidentenbaguettes",       file: "praesidentenbaguettes" },
-      { title: "Quark/Dinkel-Kastenbrot",    file: "quarkdinkelkasten" },
       { separator: true },
       { title: "Cantucci morbidi toscani",   file: "cantucci" },
       { title: "Erdbeertorte",               file: "erdbeertorte" },
@@ -106,20 +104,15 @@ var navlinks = [
       { separator: true },
       { title: "Crêpe",                      file: "crepe" },
       { title: "Flammkuchen",                file: "flammkuchen" },
-      { title: "Pancakes",                   file: "pancakes" },
       { title: "Pizza",                      file: "pizza" },
       { title: "Pfannkuchen",                file: "pfannkuchen" },
     ] }]
   }, {
     title: "Gerichte", folder: "gerichte", sections: [{ entries: [
-      { title: "Bœuf Stroganoff",
-        file: "boeuf-stroganoff" },
       { title: "Bolognese",
         file: "bolognese" },
       { title: "Jiǎozi",
         file: "jiaozi" },
-      { title: "Lamm-Teriyaki mit Rosenkohl und Ingwer-Dip",
-        file: "lamm-teriyaki-mit-rosenkohl" },
       { title: "Limetten/Ingwer Hühnchen",
         file: "limetten-ingwer-huehnchen" },
       { title: "Mediterraner Broccolisalat",
@@ -130,8 +123,6 @@ var navlinks = [
         file: "oyakodon" },
       { title: "Scharf/fruchtiges Karottengemüse",
         file: "scharf-fruchtiges-karottengemuese" },
-      { title: "Wirsing-Paprika Nudeln",
-        file: "wirsing-paprika-nudeln" },
     ] }]
   }, {
     title: "Suppen", folder: "suppen", sections: [{ entries: [
