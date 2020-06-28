@@ -102,28 +102,46 @@ var navlinks = [
       { title: "Muffins",                    file: "muffins" },
       { title: "Quittenkompottkuchen",       file: "quittenkompottkuchen" },
       { separator: true },
-      { title: "Crêpe",                      file: "crepe" },
       { title: "Flammkuchen",                file: "flammkuchen" },
       { title: "Pizza",                      file: "pizza" },
-      { title: "Pfannkuchen",                file: "pfannkuchen" },
     ] }]
   }, {
-    title: "Gerichte", folder: "gerichte", sections: [{ entries: [
-      { title: "Bolognese",
-        file: "bolognese" },
-      { title: "Jiǎozi",
-        file: "jiaozi" },
-      { title: "Limetten/Ingwer Hühnchen",
-        file: "limetten-ingwer-huehnchen" },
-      { title: "Mediterraner Broccolisalat",
-        file: "mediterraner-broccolisalat" },
-      { title: "Murgh Saag",
-        file: "murgh-saag" },
-      { title: "Oyakodon",
-        file: "oyakodon" },
-      { title: "Scharf/fruchtiges Karottengemüse",
-        file: "scharf-fruchtiges-karottengemuese" },
-    ] }]
+    title: "Gerichte", folder: "gerichte", sections: [
+      {
+        title: "Ausgebackenes", entries: [
+          { title: "Crêpe",          file: "crepe" },
+          { title: "Kaiserschmarrn", file: "kaiserschmarrn" },
+          { title: "Pfannkuchen",    file: "pfannkuchen" },
+        ]
+      }, {
+        title: "Chinesisch", entries: [
+          { title: "Jiǎozi", file: "jiaozi" },
+        ]
+      }, {
+        title: "Hühnchen", entries: [
+          { title: "Limetten/Ingwer Hühnchen",
+            file: "limetten-ingwer-huehnchen" },
+        ]
+      }, {
+        title: "Indisch", entries: [
+          { title: "Murgh Saag", file: "murgh-saag" },
+
+        ]
+      }, {
+        title: "Japanisch", entries: [
+          { title: "Okonomiyaki", file: "okonomiyaki" },
+          { title: "Oyakodon",    file: "oyakodon" },
+        ]
+      }, {
+        title: "Nudelgerichte- und soßen", entries: [
+          { title: "Bolognese",           file: "bolognese" },
+          { title: "Lasagne",             file: "lasagne" },
+          { title: "Spaghetti Carbonara", file: "spaghetti-carbonara" },
+        ]
+      }
+      // { title: "Scharf/fruchtiges Karottengemüse",
+      //   file: "scharf-fruchtiges-karottengemuese" },
+    ]
   }, {
     title: "Suppen", folder: "suppen", sections: [{ entries: [
       { title: "Broccolirahmsuppe",  file: "broccolirahm" },
@@ -131,6 +149,11 @@ var navlinks = [
       { title: "Lauchcremesuppe",    file: "lauchcreme" },
       { title: "Paprikacremesuppe",  file: "paprikacreme" },
       { title: "Scharfe Entensuppe", file: "scharfe-enten" },
+    ] }]
+  }, {
+    title: "Salate", folder: "salate", sections: [{ entries: [
+      { title: "Mediterraner Broccolisalat",
+        file: "mediterraner-broccolisalat" },
     ] }]
   },
 ];
