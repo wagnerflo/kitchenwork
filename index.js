@@ -91,7 +91,6 @@ var navlinks = [
       { title: "Theorie & Tipps", file: "theorie" },
       { separator: true },
       { title: "Ciabatta",                   file: "ciabatta" },
-      { title: "Dinkelfoccacia",             file: "dinkelfoccacia" },
       { title: "Fladenbrot",                 file: "fladenbrot" },
       { title: "Präsidentenbaguettes",       file: "praesidentenbaguettes" },
       { separator: true },
@@ -101,9 +100,6 @@ var navlinks = [
       { title: "Hefeteig für Blechkuchen",   file: "blechkuchen-hefeteig" },
       { title: "Muffins",                    file: "muffins" },
       { title: "Quittenkompottkuchen",       file: "quittenkompottkuchen" },
-      { separator: true },
-      { title: "Flammkuchen",                file: "flammkuchen" },
-      { title: "Pizza",                      file: "pizza" },
     ] }]
   }, {
     title: "Gerichte", folder: "gerichte", sections: [
